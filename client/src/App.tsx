@@ -58,7 +58,7 @@ function App() {
 
       // save user to mongodb
       if (profileObj) {
-        const response = await fetch("http://localhost:8080/api/v1/users/", {
+        const response = await fetch("https://refine-dashboard-wmxb.onrender.com/api/v1/users/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -129,7 +129,7 @@ function App() {
       <GlobalStyles styles={{ html: { WebkitFontSmoothing: "auto" } }} />
       <RefineSnackbarProvider>
         <Refine
-          dataProvider={dataProvider("http://localhost:8080/api/v1")}
+          dataProvider={dataProvider("https://refine-dashboard-wmxb.onrender.com/api/v1")}
           notificationProvider={notificationProvider}
           ReadyPage={ReadyPage}
           catchAll={<ErrorComponent />}

@@ -14,21 +14,28 @@ import { ColorModeContext } from "contexts";
 
 export const Header: React.FC = () => {
   const { mode, setMode } = useContext(ColorModeContext);
-  
+
   const { data: user } = useGetIdentity();
   const shouldRenderHeader = true; // since we are using the dark/light toggle; we don't need to check if user is logged in or not.
-  
+
+  if (mode === "dark") {
+    setMode();
+  }
+
   return shouldRenderHeader ? (
-    <AppBar color="default" position="sticky" elevation={0} sx={{background: '#fcfcfc'}}>
+    <AppBar
+      color="default"
+      position="sticky"
+      elevation={0}
+      sx={{ background: "#fcfcfc" }}
+    >
       <Toolbar>
         <Stack
           direction="row"
           width="100%"
           justifyContent="flex-end"
           alignItems="center"
-          >
-          
-          
+        >
           <Stack
             direction="row"
             gap="16px"
